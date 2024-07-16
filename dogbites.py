@@ -43,8 +43,6 @@ drop_columns = [
 # Cleaning column headers.
 dog_data_clean = dog_data.drop(columns=drop_columns)
 # Notes on cleaning the data:
-# - Inconsistent age formatting was used. Sometimes in months, mostly in years.
-# - Zipcodes labeled in different ways. "?", "N/A", etc.
 
 dt_format = None
 
