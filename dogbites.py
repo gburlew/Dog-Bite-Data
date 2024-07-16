@@ -46,8 +46,14 @@ dog_data_clean = dog_data.drop(columns=drop_columns)
 # - Inconsistent age formatting was used. Sometimes in months, mostly in years.
 # - Zipcodes labeled in different ways. "?", "N/A", etc.
 
+dt_format = None
+
 dog_data_clean["unique_id"] = dog_data_clean["unique_id"].astype("Int64")
+dog_data_clean['age'] = dog_data_clean["age"].replace("Y", "", regex=True)
+dog_data_clean['zip_code'] = dog_data_clean["zip_code"].replace("?", "None")
+dog_data_clean['incident_date'] = pd.to_datetime(dog_data_clean["incident_date"], format=dt_format)
 
 # Sorting and printing data.
-# dog_data_clean.sort_values("unique_id")
-print(dog_data_clean.dtypes)
+dog_data_clean.sort_values("unique_id")
+print(dog_data_clean)
+
