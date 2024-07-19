@@ -53,7 +53,12 @@ create table breed_borough (
 	foreign key (borough) references population (borough)
 );
 
-select * from dog_bite
+-- 1. Count of how many incidences in each borough and by year.
+-- 2. Count of breeds and and incidences by breed.
+-- 3. Population percentage vs. number of incidences and breed.
+-- 4. Popularity of breed in each borough.
+
+
 
 
 
