@@ -54,6 +54,14 @@ create table breed_borough (
 );
 
 -- 1. Count of how many incidences in each borough and by year.
+
+create table incidents_by_year_borough as
+select extract (year from incident_date) as year, borough, Count (*) As IncidentCount
+from dog_locations
+group by year, borough
+order by year, borough;
+
+
 -- 2. Count of breeds and and incidences by breed.
 
 select breed_borough.breed, count(*) as incident_count
