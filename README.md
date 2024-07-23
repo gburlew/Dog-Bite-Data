@@ -1,21 +1,25 @@
 # Dog-Bite-Data
 
 Data Engineering Track
-See dogbites JSON file, we are looking at number of dog bites reported in new york city boroughs between 2015 and 2022.
+To analyze the number of dog bites reported in new york city boroughs between 2015 and 2022.
 
-1. SQL source file: dog_bit_data_postgres
-       Tables:
-           1. population: population percentages in new york city boroughs
-           2. dog_bite: full data set
-           3. dogs_data: dog demographics
-           4. dog_locations: borough and zipcodes
-           5. breed_borough: breed of dogs by borough
-           6. incidents_by_year_borough: number of dog bites in each borough by year.
+SQL source file: dog_bit_data_postgres (6 tables);
+       See Querys to determine the number of dog bites that occurred in the five main boroughs of new york city for the years 2015-2022, the count of breeds and incidences of dog bites by breed, comparison between population percentage and number of dogbites occurring in each borough, and the popularity of dog breeds in each borough.
+
+See Folium Map to see total incidences of dog bites in each borough for each year.
+
+See ERD folder for workflow diagram.
+
+See Pandas DataFame folder to view screenshots of cleaned data set.
+
+Ethical Considerations: 
+
+REFERENCES:
+Dog Bite Data (https://catalog.data.gov/dataset/dohmh-dog-bite-data/resource/21d7bc57-e2a5-48e2-bf4b-10f13bea946b) *see dogbites JSON file 
+NYC Population data *see nyc_pop JSON file
+
+Folium starter code (https://python-visualization.github.io/folium/latest/getting_started.html)
+
+Coding Assistance: course instructor, xpert learning assistant, stack overflow
+       
    
-2. dogbites JSON (https://catalog.data.gov/dataset/dohmh-dog-bite-data/resource/21d7bc57-e2a5-48e2-bf4b-10f13bea946b), nyc_pop
-
-3-4. Transformed data to cleaned csv files:  cleaned_data (master df), dog_location, dogs_data, incidents_by_year_borough, breed_borough, borough_loc, 2020_nyc_pop_df
-
-5. Folium: see Folium Map
-
-6. *need documents of why we chose postgressql and an updated ERD
