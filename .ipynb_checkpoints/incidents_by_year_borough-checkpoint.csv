@@ -1,0 +1,41 @@
+year,borough,incidentcount
+2015,Bronx,262
+2016,Bronx,291
+2017,Bronx,279
+2018,Bronx,261
+2019,Bronx,275
+2020,Bronx,126
+2021,Bronx,118
+2022,Bronx,211
+2015,Brooklyn,410
+2016,Brooklyn,368
+2017,Brooklyn,395
+2018,Brooklyn,300
+2019,Brooklyn,331
+2020,Brooklyn,247
+2021,Brooklyn,232
+2022,Brooklyn,248
+2015,Manhattan,390
+2016,Manhattan,328
+2017,Manhattan,398
+2018,Manhattan,407
+2019,Manhattan,404
+2020,Manhattan,251
+2021,Manhattan,253
+2022,Manhattan,319
+2015,Queens,448
+2016,Queens,413
+2017,Queens,472
+2018,Queens,469
+2019,Queens,497
+2020,Queens,294
+2021,Queens,347
+2022,Queens,441
+2015,Staten Island,170
+2016,Staten Island,168
+2017,Staten Island,173
+2018,Staten Island,142
+2019,Staten Island,150
+2020,Staten Island,70
+2021,Staten Island,57
+2022,Staten Island,109
