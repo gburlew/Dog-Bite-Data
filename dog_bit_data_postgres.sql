@@ -71,6 +71,12 @@ order by incident_count desc;
 
 
 -- 3. Population percentage vs. number of incidences and breed.
+
+select b.borough, pop.pop_portion as population_percent, b.breed, b.breed_count from
+(select borough, breed, count(breed) as breed_count from breed_borough
+	group by borough, breed
+	order by borough asc) as b join population as pop on pop.borough=b.borough;
+
 -- 4. Popularity of breed in each borough.
 
 select distinct breed_borough.borough as borough
