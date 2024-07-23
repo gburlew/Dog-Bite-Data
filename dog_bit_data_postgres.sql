@@ -55,10 +55,58 @@ create table breed_borough (
 
 -- 1. Count of how many incidences in each borough and by year.
 -- 2. Count of breeds and and incidences by breed.
+
+select breed_borough.breed, count(*) as incident_count
+from breed_borough
+group by breed_borough.breed
+order by incident_count desc;
+
+
 -- 3. Population percentage vs. number of incidences and breed.
 -- 4. Popularity of breed in each borough.
 
+select distinct breed_borough.borough as borough
+from breed_borough;
 
+create view brooklyn as
+select breed_borough.breed, COUNT(*) as breed_count
+from breed_borough
+where breed_borough.borough = 'Brooklyn'
+group by breed_borough.breed
+order by breed_count desc
+limit 10;
+
+create view queens as
+select breed_borough.breed, COUNT(*) as breed_count
+from breed_borough
+where breed_borough.borough = 'Queens'
+group by breed_borough.breed
+order by breed_count desc
+limit 10;
+
+create view staten_island as
+select breed_borough.breed, COUNT(*) as breed_count
+from breed_borough
+where breed_borough.borough = 'Staten Island'
+group by breed_borough.breed
+order by breed_count desc
+limit 10;
+
+create view bronx as
+select breed_borough.breed, COUNT(*) as breed_count
+from breed_borough
+where breed_borough.borough = 'Bronx'
+group by breed_borough.breed
+order by breed_count desc
+limit 10;
+
+create view manhattan as
+select breed_borough.breed, COUNT(*) as breed_count
+from breed_borough
+where breed_borough.borough = 'Manhattan'
+group by breed_borough.breed
+order by breed_count desc
+limit 10;
 
 
 
