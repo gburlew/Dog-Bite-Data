@@ -4,6 +4,7 @@ drop table if exists dog_locations cascade;
 drop table if exists dogs_data cascade;
 drop table if exists breed_borough cascade;
 
+select * from population
 
 create table population (
 	index_column INT,
@@ -12,6 +13,8 @@ create table population (
 	pop_portion VARCHAR (500)
 
 );
+
+select * from Dog_Bite
 
 create table Dog_Bite (
 	index_column INT PRIMARY KEY,
@@ -25,6 +28,8 @@ create table Dog_Bite (
 	foreign key (borough) references population (borough)
 );
 
+select * from dogs_data
+
 create table dogs_data (
 	index_column INT,
 	incident_date DATE,
@@ -35,6 +40,8 @@ create table dogs_data (
 	foreign key (index_column) references dog_bite (index_column)
 );
 
+select * from dog_locations
+
 create table dog_locations (
 	index_column INT,
 	incident_date DATE,
@@ -43,6 +50,8 @@ create table dog_locations (
 	foreign key (index_column) references dog_bite (index_column),
 	foreign key (borough) references population (borough)
 );
+
+select * from breed_borough
 
 create table breed_borough (
 	index_column INT,
@@ -53,7 +62,15 @@ create table breed_borough (
 	foreign key (borough) references population (borough)
 );
 
+
+
+-- QUERY to analyze dog bite data
+
 -- 1. Count of how many incidences in each borough and by year.
+
+SELECT *
+FROM incidents_by_year_borough
+where year = 2015
 
 create table incidents_by_year_borough as
 select extract (year from incident_date) as year, borough, Count (*) As IncidentCount
