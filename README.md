@@ -10,8 +10,6 @@ See Folium Map to see total incidences of dog bites in each borough for each yea
 
 See ERD folder for workflow diagram.
 
-See Pandas DataFame folder to view screenshots of cleaned data set.
-
 Ethical Considerations: 
 
 REFERENCES:
