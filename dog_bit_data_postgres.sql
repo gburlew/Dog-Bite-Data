@@ -141,10 +141,22 @@ limit 10;
 
 
 
+create table breed_year_borough as
+WITH ranked_breeds AS (
+    SELECT 
+        EXTRACT(YEAR FROM incident_date) AS year,
+        borough,
+        breed,
+        ROW_NUMBER() OVER (PARTITION BY EXTRACT(YEAR FROM incident_date), borough ORDER BY COUNT(*) DESC) AS breed_rank
+    FROM breed_borough
+    GROUP BY EXTRACT(YEAR FROM incident_date), borough, breed
+)
+SELECT year, borough, breed
+FROM ranked_breeds
+WHERE breed_rank <= 3
+ORDER BY year, borough, breed_rank;
 
 
-
-
-
+select * from breed_year_borough
 
 
